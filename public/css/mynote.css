@@ -1,0 +1,97 @@
+.sp_del, .budjet, .calend, .sp_guests, .calc_menu, .intrv_guests, .schedule, .contacts_evt, .notes_evt{
+	display: block;
+	position: relative;
+	width: 245px;
+	height: 180px;
+	margin: 10px;
+	border-radius: 5px;
+	float: left;
+	background:#fae6f1;
+	box-shadow: 2px 2px 2px #666565;
+	color: #222222;
+	font-family: 'a_FuturicaLt';
+	transition: all 0.4s ease-in-out 0.1s;
+}
+.sp_del:hover, .budjet:hover, .calend:hover, .sp_guests:hover, .calc_menu:hover, .intrv_guests:hover, .schedule:hover, .contacts_evt:hover, .notes_evt:hover
+{transform:scale(1.1);}
+
+.sp_del{background:#fae6f1 url(/img/sp_del_ico.png) right bottom no-repeat;}
+.calend{background:#fae6f1 url(/img/kalend_ico.png) right bottom no-repeat;}
+.sp_guests{background:#fae6f1 url(/img/sp_guests_ico.png)center bottom no-repeat;}
+.bbbnn{
+	background: #111;
+	background-image: url();
+	background-position: right; 
+	background-repeat: no-repeat;
+}
+.calc_menu{background:#fae6f1 url(/img/calc_menu_ico.png)center top no-repeat;}
+.intrv_guests{background:#fae6f1 url(/img/intrv_guests_ico.png)center bottom no-repeat;}
+.schedule{background:#fae6f1 url(/img/raspisanie_ico.png)center bottom no-repeat;}
+.contacts_evt{background:#fae6f1 url(/img/evt_cnct_ico.png)center center no-repeat;}
+.notes_evt{background:#fae6f1 url(/img/notes_evt_ico.png)bottom center no-repeat;}
+
+
+.sp_del h3, .budjet h3, .calend h3, .sp_guests h3, .calc_menu h3, .intrv_guests h3, .schedule h3, .contacts_evt h3, .notes_evt h3{
+	display: block;
+	width: 257px;
+	height: 40px;
+	margin-left: -5px;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+.sp_del h3, .calend h3, .sp_guests h3, .intrv_guests h3, .schedule h3, .notes_evt h3{
+	background: url(/img/sp_del_bc.png) left top no-repeat; 
+	margin-top:20px;
+}
+
+.budjet h3, .calc_menu h3, .contacts_evt h3{
+	position: relative;
+	background: url(/img/budjet_bc.png) left top no-repeat;
+	top: 20px; 
+}
+.calc_menu h3, .contacts_evt h3{top: 120px;}
+
+.sp_del ul, .calend ul{
+	margin-top: 20px;
+	list-style: none;
+	font-size: 80%;
+	line-height: 15px;
+	padding-left: 5px;
+}
+
+.schal_del{
+	position: relative;
+	left: 10px;
+	top: 15px;
+	width: 120px;
+	height: 15px;
+	background: #757474;
+	border-radius: 3px;
+}
+
+.schal_budjet{
+	margin: 10px auto 0px auto;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: #757474;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

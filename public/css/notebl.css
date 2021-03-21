@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+
+.note{
+	position:fixed;
+	font-family:'a_FuturicaLt';
+	float:left;
+	top:80px;
+}
+.mynote, .budget h3{font-size:140%; color:#828080; font-family:'a_FuturicaLtBL';}
+
+.spl_bt1, .spl_bt1_act{
+	display:block;
+	position:absolute;
+	margin:-20px 0 0 150px;
+	width:13px;
+	height:13px;
+	background: url(../img/strelka_blue13.png) left bottom no-repeat;
+}
+.note.open .spl_bt1,
+.spl_bt1_act{
+	background-position: left top;
+}
+
+.spldv1{margin-bottom:10px;}
+.spldv2 a{
+	color:#da5c9d;
+	font-size:100%;
+	padding-left:20px;
+}
+.spldv2 p{
+	width:200px;
+	overflow:hidden;
+	white-space:nowrap;
+	-ms-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+}
+.spldv2 h3{
+	color:#7a7979; 
+	font-size:120%;
+	padding-left: 21px;
+	font-family:'a_FuturicaLt';
+	font-weight: 600;
+	position:relative;
+	margin:0 0 4px;
+	-webkit-transition:all 0.35s ease;
+	-o-transition:all 0.35s ease;
+	transition:all 0.35s ease;
+}
+.spldv2 h3:after{
+	position:absolute;
+	content:'';
+    top: 7px;
+    left: 2px;
+    border-top: 8px solid transparent;
+    border-left: 10px solid #529cc1;
+    border-right:0 solid transparent;
+    border-bottom: 8px solid transparent;
+    -webkit-transition:all .35s ease;
+    -o-transition:all .35s ease;
+    transition:all .35s ease;
+}
+.spldv2 h3.spl2btact:after{
+	top:10px;
+	left:0;
+	border-top: 10px solid #529cc1;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom-width:0;
+}
+.spldv2 h3:hover, .spl2btact:hover{
+	cursor:pointer;
+	color:#d72784;
+}
+
+.budget{position:relative; left:20px;}
+
+.bdg_shkala{
+	width:130px;
+	height:20px;
+	background:#757474;
+	border-radius:2px;
+}
+.budget h3{ font-size:90%;}
+
+
+
+
+.spldv2 h3 a{
+	padding-left:3px;
+	color:#7a7979;
+}
+
+
+
+
+
+
+
+
+
+
+
+
