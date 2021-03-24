@@ -72,7 +72,6 @@ class MenuController extends Controller
     	$summ = 0;
 		$weight = 0;
 		$kolvo = 0;
-$test = "13,4343";
 
 // Выводим количество гостей
     if (Auth::user()) {
@@ -86,8 +85,11 @@ $test = "13,4343";
     			$summ += $value->summ;
 				$weight += $value->weight;
 				$kolvo += $value->kolvo;
+
     		}
 		}
+
+
 		       echo '<table border="1" width="100%" cellpadding="5">
                     <tr>
                         <th>Вес на гостя</th>
@@ -96,7 +98,7 @@ $test = "13,4343";
                     </tr>
                     <tr>
                         <th>'. number_format((float)$test, 2, '.', '').'</th>
-                         <th>'. number_format((float)$test, 2, '.', '').'</th>
+                         <th>'. number_format((float)$summ / $totalguest, 2, '.', '').'</th>
                          <th>'. number_format((float)$test, 2, '.', '').'</th>
                     </tr>
                 </table>';
