@@ -97,9 +97,9 @@ class MenuController extends Controller
                         <th>Сумма общая</th>
                     </tr>
                     <tr>
-                        <th>'. number_format((float)$test, 2, '.', '').'</th>
+         <th>'. number_format((float)$weight/ $totalguest, 2, '.', '').'</th>
                          <th>'. number_format((float)$summ / $totalguest, 2, '.', '').'</th>
-                         <th>'. number_format((float)$test, 2, '.', '').'</th>
+                         <th>'. number_format((float)$summ, 2, '.', '').'</th>
                     </tr>
                 </table>';
 	}
