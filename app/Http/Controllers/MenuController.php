@@ -18,14 +18,19 @@ class MenuController extends Controller
     }
 
     public function getMenu(Request $request){
+		
+		// if (empty($request->id)) {
+		// 	$menu = Menu::all();
+		// 	var_dump($menu);
+		// }else{
 
-    	$group = Menu_group::find($request['id']);
+			$group = Menu_group::find($request['id']);
 
 				$id_group = $group->id;
 	            echo '<div class="group">
                     <h3 class="group" id="'.$group->id.'">'.$group->name.'</h3>
                 	</div>
-	               	<table border="1" width="100%" cellpadding="5">
+	               	<table class="tb-raschet-menu >
 	                    <tr>
 	                        <th></th>
 	                        <th>Название блюда</th>
@@ -36,26 +41,28 @@ class MenuController extends Controller
 	                    </tr>';
 
 					foreach (Menu::where('menu_group_id', $request['id'])->get() as $key => $value) {
-						echo '<tr id="'.$value->id.'">
-	                        <th><a id="'.$value->id.'" href="javascript:void(0);"><i class="fa fa-trash" aria-hidden="true"></i></a></th>
-	                        <th>'.$value->name.'</th>
-	                        <th class="kolvo">'.$value->kolvo.'</th>
-	                        <th class="weight">'.$value->weight.'</th>
-	                        <th>'.$value->price.'</th>
-	                        <th class="summ">'.$value->summ.'</th>
+						echo '
+							<tr id="'.$value->id.'">
+							<td>'.$value->name.'</td>
+	                        <td class="kolvo">'.$value->kolvo.'</td>
+	                        <td class="weight">'.$value->weight.'</td>
+	                        <td>'.$value->price.'</td>
+	                        <td class="summ">'.$value->summ.'</td>
+							<td><a id="'.$value->id.'" href="javascript:void(0);"><i class="fa fa-times" aria-hidden="true"></i></a></td>
 	                    </tr>';
 					}
 
 	                echo '</table>
 	                   <form name="'.$id_group.'" class="new_add" method="POST" id="formsend" action="javascript:void(null);" onsubmit="send()">
-                       <input type="text" id="name" name="name" placeholder="Название блюда">
-                       <input type="text" id="kolvo" name="kolvo" placeholder="Кол-во">
-                       <input type="text" id="weight" name="weight" placeholder="Вес">
-                       <input type="text" id="price" name="price" placeholder="Цена">
-                       <input type="text" class="summ-input" name="summ" readonly>
-                       <input id="submit_send" value="Добавить" type="submit" class="add">
+                       <input class="text guests-input" type="text" id="name" name="name" placeholder="Название блюда">
+                       <input class="text guests-input" type="text" id="kolvo" name="kolvo" placeholder="Кол-во">
+                       <input class="text guests-input" type="text" id="weight" name="weight" placeholder="Вес">
+                       <input class="text guests-input" type="text" id="price" name="price" placeholder="Цена">
+                       <input class="text guests-input" type="text" class="summ-input" name="summ" readonly>
+                       <input class="text guests-input" id="submit_send" value="Добавить" type="submit" class="add">
                 </form>';
                 unset($id_group);
+		
 
 
     }
@@ -72,7 +79,7 @@ class MenuController extends Controller
     	$summ = 0;
 		$weight = 0;
 		$kolvo = 0;
-
+		$test = 12;
 // Выводим количество гостей
     if (Auth::user()) {
         $totalguest = \App\Guest::getGuestsNumber(\Illuminate\Support\Facades\Auth::user()->events()->first()['id']);
@@ -90,18 +97,20 @@ class MenuController extends Controller
 		}
 
 
-		       echo '<table border="1" width="100%" cellpadding="5">
+		       echo '<div>
+			   <table  class= "tb-raschet-menu t5">
                     <tr>
                         <th>Вес на гостя</th>
                         <th>Сумма на 1 гостя</th>
                         <th>Сумма общая</th>
                     </tr>
                     <tr>
-         <th>'. number_format((float)$weight/ $totalguest, 2, '.', '').'</th>
-                         <th>'. number_format((float)$summ / $totalguest, 2, '.', '').'</th>
-                         <th>'. number_format((float)$summ, 2, '.', '').'</th>
+                        <td>'. number_format((float)$weight/ $totalguest, 2, '.', '').'</td>
+                         <td>'. number_format((float)$summ / $totalguest, 2, '.', '').'</td>
+                         <td>'. number_format((float)$summ, 2, '.', '').'</td>
                     </tr>
-                </table>';
+                </table>
+				</div>';
 	}
 
 
